@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Righteous" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 container-inside">
+
+                <h1>Totally Trivial Trivia!</h1>
+
+                <div id="startButton"></div>
+
+                <div id="question-mode">
+                    <div id="timer"></div>
+                    <div id="questions"></div>
+                    <div id="choices"></div>
+                </div>
+
+                <div id="wrong-mode">
+                    <p> Nope !!!!!!!!!!!!!!!!!!!!!!</p>
+                    <div id="correct-answer-for-wrong"></div>
+                    <img id="correct-image-for-wrong" style="width:250px; height: 180px">
+                </div>
+
+
+
+                <div id="no-answer-mode">
+                    <p> Out of Time !!!!!!!!!!!!!!!!!!!!!!</p>
+                </div>
+
+                <div id="correct-mode">
+                    <p> Congratulations !!!!!!!!!!!!!!!!!!!!!!</p>
+                    <img src="assets/images/correct-answer.gif">
+                </div>
+
+                <div id="result">
+                    <p>All done, here is how you did!</p>
+                    <div id="correct-result"></div>
+                    <div id="wrong-result"></div>
+                    <div id="unanswered-result"></div>
+                </div>
+
+                <div id="startOverButton"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
