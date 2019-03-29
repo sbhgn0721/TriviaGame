@@ -58,7 +58,7 @@ $(document).ready(function () {
         $("#startButton").hide();
         $("#questions").show();
         $("#choices").show();
-        
+
 
         var countDownTimer;
 
@@ -78,11 +78,11 @@ $(document).ready(function () {
                     $("#timer").text("Time Remaining: " + time + " Seconds");
                 }
                 else if (time == 0) {
-                    currentQuestion++;
                     unanswered++;
                     $("#timer").text("Time Remaining: " + 0 + " Seconds");
                     clearInterval(countDownTimer);
                     showResultPerQuestion(undefined);
+                    currentQuestion++;
                 }
 
             }, 1000)
@@ -102,25 +102,15 @@ $(document).ready(function () {
             $("input[name='dynradio']").on("click", function () {
                 var value = $("input[name = 'dynradio']:checked").val();
                 //if user doesn't choose any answer, and the time is up
-                if (value == undefined) {
-                    var correctAnswerDisplay = questions[currentQuestion].correctAnswer;
-                    $("#correct-answer-for-no").html("<p>The Correct Answer Was: " + correctAnswerDisplay + "</p>");
-
-                    unanswered++;
-                    currentQuestion++;
-                    //if user chooses the correct answer
-                } else if (value == questions[currentQuestion].correctAnswer) {
+                if (value == questions[currentQuestion].correctAnswer) {
                     currentQuestion++;
                     correctAnswers++;
                     showResultPerQuestion(true);
                     //if user chooses the wrong answer
                 } else {
-                    var correctAnswerDisplay = questions[currentQuestion].correctAnswer;
-                    $("#correct-answer-for-wrong").html("<p>The Correct Answer Was: " + correctAnswerDisplay + "</p>");
-                    $("#correct-image-for-wrong").attr('src', questions[currentQuestion].correctImage);
-                    currentQuestion++;
-                    wrongAnswers++
+                    wrongAnswers++;
                     showResultPerQuestion(false);
+                    currentQuestion++;
                 }
 
             })
@@ -144,11 +134,17 @@ $(document).ready(function () {
                 $("#correct-mode").show();
             }
             else if (result === false) {
-
                 $("#wrong-mode").show();
+                var correctAnswerDisplay = questions[currentQuestion].correctAnswer;
+                $("#correct-answer-for-wrong").html("<p>The Correct Answer Was: " + correctAnswerDisplay + "</p>");
+                $("#correct-image-for-wrong").attr('src', questions[currentQuestion].correctImage);
+
             }
             else {
                 $("#no-answer-mode").show();
+                var correctAnswerDisplay = questions[currentQuestion].correctAnswer;
+                $("#correct-answer-for-no").html("<p>The Correct Answer Was: " + correctAnswerDisplay + "</p>");
+                $("#correct-image-for-no").attr('src', questions[currentQuestion].correctImage);
             }
             setTimeout(function () {
                 $("#question-mode").show();
