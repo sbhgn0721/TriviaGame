@@ -101,7 +101,7 @@ $(document).ready(function () {
             //user click the radio button and make a choice
             $("input[name='dynradio']").on("click", function () {
                 var value = $("input[name = 'dynradio']:checked").val();
-                //if user doesn't choose any answer, and the time is up
+                //if user doesn't choose the right answer
                 if (value == questions[currentQuestion].correctAnswer) {
                     currentQuestion++;
                     correctAnswers++;
