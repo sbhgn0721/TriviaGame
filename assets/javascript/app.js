@@ -117,7 +117,6 @@ $(document).ready(function () {
         }
 
         $(startOverButton).on("click", function () {
-            time = 30;
             currentQuestion = 0;
             correctAnswers = 0;
             wrongAnswers = 0;
